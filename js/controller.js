@@ -1,6 +1,6 @@
-var myApp = angular.module('myApp', []);
+var app = angular.module('numberApp' ,[]);
  
-myApp.controller('customCtrl', function($scope) {
+app.controller('customCtrl', function($scope) {
   $scope.number;
 });
 

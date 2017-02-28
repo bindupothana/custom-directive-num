@@ -1,4 +1,7 @@
-myApp.directive('customDirective', function($filter, $browser) {
+var app = angular.module('numberApp');
+
+
+app.directive('customDirective', function($filter, $browser) {
     return {
         require: 'ngModel',
          
@@ -11,7 +14,7 @@ myApp.directive('customDirective', function($filter, $browser) {
             var listener = function() {
                 
 
-                var value = $element.val().replace(/[^0-9]/g, '');
+                var value = $element.val().replace(/[^0-9]/g,'');
                
 
                 $element.val($filter('tel')(value, false));
@@ -21,7 +24,7 @@ myApp.directive('customDirective', function($filter, $browser) {
             customCtrl.$parsers.push(function(viewValue) {
                 
 
-                return viewValue.replace(/[^0-9]/g, '').slice(0,10);
+                return viewValue.replace(/[^0-9]/g,'').slice(0,10);
             });
 
           
